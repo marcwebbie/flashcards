@@ -1,0 +1,8 @@
+body {
+  background: pink;
+}
+
+table, .flashcard{
+  width:100%;
+  text-align:center;
+}
