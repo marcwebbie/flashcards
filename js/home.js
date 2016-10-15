@@ -7,6 +7,6 @@ $(document).ready(function() {
       text: $("#textbox").val(),
       lines: $("#linestoggle").is(":checked")
     };
-    window.location.href = "/read.html?" + $.param(params);
+    window.location.href = "read.html?" + $.param(params);
   });
 });

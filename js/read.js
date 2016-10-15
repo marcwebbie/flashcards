@@ -16,7 +16,7 @@ var qs = function(key) {
 var setBigWord = function(word) {
   $(".bigtext>.word").html(word);
   // $(".bigtext").bigtext();
-  $(".bigtext").fitText(0.6);
+  $(".bigtext").fitText();
 };
 
 var read = function(){

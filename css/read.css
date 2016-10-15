@@ -1,8 +1,8 @@
-body {
-  font-family: "Montserrat", sans-serif;
-}
+@import url('https://fonts.googleapis.com/css?family=Lateef');
+/* @import url('https://fonts.googleapis.com/css?family=Jomhuria|Katibeh|Lalezar|Mirza|Amiri'); */
 
-.container {
+body {
+    background: #ffeb3b;
 }
 
 .bigtext {
@@ -10,5 +10,11 @@ body {
 }
 
 .word {
-  font-family: 'Lateef', cursive;
+    font-family: 'Lateef', cursive;
+    /* font-family: 'Amiri', cursive; */
+    /* font-family: 'Lalezar', cursive; */
+    /* font-family: 'Katibeh', cursive; */
+    /* font-family: 'Jomhuria', cursive; */
+    /* font-family: 'Mirza', cursive; */
+    font-weight: 600;
 }
