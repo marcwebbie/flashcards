@@ -5,25 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Arabic Flashcards</title>
-
+    <title>Arabic Reading</title>
     <link href="https://fonts.googleapis.com/css?family=Lateef" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/blaze.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
   </head>
   <body>
 
-    <div class="flashcard arabic">
-      <span class="text arabic"></span>
-    </div>
-    <div class="flashcard english">
-      <span class="text english"></span>
+    <div id="form">
+      <div class="c-hero u-letter-box--super u-centered">
+        <h1 class="c-heading c-heading--xlarge u-window-box--none">Speed Reading</h1>
+        <!-- <h2 class="c-heading c-heading--small u-window-box--none c-text--quiet">Enter a text to speed read</h2> -->
+      </div>
+      <main class="o-container o-container--medium u-pillar-box--small">
+        <div class="o-form-element">
+          <label class="c-label" for="speedbox">Speed:</label>
+          <input id="speedbox" class="c-field" type="text" value="300">
+        </div>
+        <div class="o-form-element">
+          <label class="c-label" for="textbox">Text:</label>
+          <textarea id="textbox" class="c-field u-medium"></textarea>
+        </div>
+        <div class="o-form-element">
+          <label class="c-toggle">
+            Read by line?
+            <input type="checkbox" checked>
+            <div class="c-toggle__track">
+              <div class="c-toggle__handle"></div>
+            </div>
+          </label>
+        </div>
+        <div class="o-form-element">
+          <a id="button_read" class="c-button c-button--brand c-button--block" href="">Read</a>
+        </div>
+      </main>
     </div>
 
     <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.fittext.js"></script>
     <script src="js/bigtext.js"></script>
     <script src="js/dict.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="js/home.js"></script>
   </body>
 </html>

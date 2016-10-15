@@ -17,22 +17,45 @@ var setBigText = function () {
   $('.flashcard.english').bigtext();
 };
 
-var qs = function(key) {
-    key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
-    var match = location.search.match(new RegExp("[?&]"+key+"=([^&]+)(&|$)"));
-    return match && decodeURIComponent(match[1].replace(/\+/g, " "));
-};
-
-$(".flashcard").on("click", function(){
+var toggleDefault = function (arabic) {
+  if (arabic !== undefined){
+    $(".flashcard.arabic").show();
+    $(".flashcard.english").hide();
+  }
   $(".flashcard.arabic").toggle();
   $(".flashcard.english").toggle();
-});
+};
+
+var setHammers = function() {
+  hammertime_arabic = new Hammer($(".flashcard.arabic")[0], {});
+  hammertime_english = new Hammer($(".flashcard.english")[0], {});
+  // hammertime_arabic.on('press', function(ev) {
+  //   console.log(ev);
+  //   toggleDefault();
+  //   setHammers();
+  // });
+  hammertime_arabic.on('swiperight', function(ev) {
+    setRandomWords(qs('letter') || qs('q'));
+    setHammers();
+  });
+  hammertime_arabic.on('swipeleft', function(ev) {
+    setRandomWords(qs('letter') || qs('q'));
+    setHammers();
+  });
+};
+
+
+
+// $(".flashcard").on("click", function(){
+//   $(".flashcard.arabic").toggle();
+//   $(".flashcard.english").toggle();
+// });
 
 $(document).ready(function() {
-  queryLetter = qs('letter') || qs('q');
-  setRandomWords(queryLetter);
+  setRandomWords(qs('letter') || qs('q'));
   setBigText();
   $(".flashcard.english").toggle();
+  setHammers();
 });
 
 
