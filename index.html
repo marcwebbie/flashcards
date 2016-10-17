@@ -7,9 +7,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Arabic Reading</title>
     <link href="https://fonts.googleapis.com/css?family=Lateef" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="css/blaze.css" rel="stylesheet">
-    <link href="css/home.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
   </head>
   <body>
 
@@ -21,16 +20,29 @@
       <main class="o-container o-container--medium u-pillar-box--small">
         <div class="o-form-element">
           <label class="c-label" for="speedbox">Speed:</label>
-          <input id="speedbox" class="c-field" type="text" value="300">
+          <input id="speedbox" class="c-field" type="text" value="">
+        </div>
+        <div class="o-form-element">
+          <label class="c-label" for="colorizebox">Colorize:</label>
+          <input id="colorizebox" class="c-field" type="text" value="">
         </div>
         <div class="o-form-element">
           <label class="c-label" for="textbox">Text:</label>
-          <textarea id="textbox" class="c-field u-medium"></textarea>
+          <textarea id="textbox" class="c-field u-medium">لبرازيل </textarea>
         </div>
         <div class="o-form-element">
           <label class="c-toggle">
             Read by line?
             <input id="linestoggle" type="checkbox" checked>
+            <div class="c-toggle__track">
+              <div class="c-toggle__handle"></div>
+            </div>
+          </label>
+        </div>
+        <div class="o-form-element">
+          <label class="c-toggle">
+            Read from dictionary?
+            <input id="dicttoggle" type="checkbox" checked>
             <div class="c-toggle__track">
               <div class="c-toggle__handle"></div>
             </div>

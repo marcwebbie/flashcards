@@ -1,4 +1,5 @@
 var text = "";
+var letter = "";
 var speed = 0;
 var text_words = [];
 var current_word_index = -1;
@@ -13,9 +14,13 @@ var qs = function(key) {
 };
 
 
-var setBigWord = function(word) {
-  $(".bigtext>.word").html(word);
-  // $(".bigtext").bigtext();
+var applyColor = function(text, charToColor){
+  return text;
+};
+
+var setBigWord = function(word, letter) {
+  var coloredWord = applyColor(word, letter);
+  $(".bigtext .word").html(coloredWord);
   $(".bigtext").fitText();
 };
 
@@ -49,6 +54,7 @@ var isInt = function(value) {
 $(document).ready(function() {
   text = qs("text");
   speed = qs("speed");
+  letter = qs("letter");
   read_by_lines = qs("lines");
   if (read_by_lines == "true"){
     text_words = text.match(/[^\r\n]+/g);
@@ -61,7 +67,7 @@ $(document).ready(function() {
     readAutomatically(text_words, speed);
   }
   else{
-    setBigWord(text_words[current_word_index++]);
+    setBigWord(text_words[current_word_index++], letter);
   }
 });
 
@@ -78,7 +84,7 @@ $(document).keyup(function(e) {
   if (e.which === 39) {
     if (current_word_index < text_words.length){
       word = text_words[++current_word_index];
-      setBigWord(word);
+      setBigWord(word, letter);
     }
   }
   if (e.which === 38) {
@@ -89,7 +95,7 @@ $(document).keyup(function(e) {
   if (e.which === 37) {
     if (current_word_index > 0) {
       word = text_words[--current_word_index];
-      setBigWord(word);
+      setBigWord(word, letter);
     }
   }
   if (e.which === 40) {

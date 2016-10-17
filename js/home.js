@@ -5,6 +5,7 @@ $(document).ready(function() {
     params = {
       speed: $("#speedbox").val(),
       text: $("#textbox").val(),
+      letter: $("#colorizebox").val(),
       lines: $("#linestoggle").is(":checked")
     };
     window.location.href = "read.html?" + $.param(params);

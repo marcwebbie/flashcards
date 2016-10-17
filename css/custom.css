@@ -1,8 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Lateef|Montserrat');
+/* @import url('https://fonts.googleapis.com/css?family=Jomhuria|Katibeh|Lalezar|Mirza|Amiri'); */
+
+
 body {
-  background: pink;
+    font-family: "Montserrat", sans-serif;
+    /* background: #ffeb3b; */
+}
+
+.bigtext {
+    font-family: "Lateef", cursive;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.word {
+    font-family: 'Lateef', cursive;
+    /* font-family: 'Amiri', cursive; */
+    /* font-family: 'Lalezar', cursive; */
+    /* font-family: 'Katibeh', cursive; */
+    /* font-family: 'Jomhuria', cursive; */
+    /* font-family: 'Mirza', cursive; */
+    font-weight: 600;
+    align-self: center;
+    text-shadow: 2px 3px 1px #aeaeae;
+    letter-spacing: 5px;
 }
 
 table, .flashcard{
-  width:100%;
-  text-align:center;
+    width:100%;
+    text-align:center;
+}
+
+.colored {
+    color: red;
 }
