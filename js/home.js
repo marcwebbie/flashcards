@@ -6,7 +6,9 @@ $(document).ready(function() {
       speed: $("#speedbox").val(),
       text: $("#textbox").val(),
       letter: $("#colorizebox").val(),
-      lines: $("#linestoggle").is(":checked")
+      letter: $("#colorizebox").val(),
+      lines: $("#linestoggle").is(":checked"),
+      dict: $("#dicttoggle").is(":checked")
     };
     window.location.href = "read.html?" + $.param(params);
   });

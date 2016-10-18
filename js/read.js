@@ -6,6 +6,8 @@ var current_word_index = -1;
 var interval = null;
 var current_words = [];
 var speed_milliseconds = 0;
+var read_by_lines = false;
+var from_dictionary = false;
 
 var qs = function(key) {
     key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
@@ -50,13 +52,39 @@ var isInt = function(value) {
          !isNaN(parseInt(value, 10));
 };
 
+var shuffle = function(a) {
+  a = a.slice(0);
+  var j, x, i;
+  for (i = a.length; i; i--) {
+    j = Math.floor(Math.random() * i);
+    x = a[i - 1];
+    a[i - 1] = a[j];
+    a[j] = x;
+  }
+  return a;
+};
+
+var getDictionary = function(letterToFilter) {
+  var dict_words = words;
+  if (letterToFilter){
+    dict_words = dict_words.filter(function(w) {
+      return w[0].indexOf(letterToFilter) !== -1;
+    });
+  }
+  return shuffle(dict_words);
+};
+
 
 $(document).ready(function() {
   text = qs("text");
   speed = qs("speed");
   letter = qs("letter");
   read_by_lines = qs("lines");
-  if (read_by_lines == "true"){
+  from_dictionary = qs("dict");
+  if (from_dictionary == "true"){
+    text_words = getDictionary(letter);
+  }
+  else if (read_by_lines == "true"){
     text_words = text.match(/[^\r\n]+/g);
   }
   else{
